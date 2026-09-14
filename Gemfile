@@ -65,3 +65,7 @@ group :test do
 end
 
 gem "json", "= 2.10.2"
+
+group :development, :test do
+  gem "rspec-rails"
+end
