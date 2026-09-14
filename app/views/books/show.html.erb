@@ -1,0 +1,11 @@
+<% content_for :title, "Book" %>
+
+<h1>Book Details</h1>
+
+<%= render @book %>
+
+<div>
+  <%= link_to "Edit this book", edit_book_path(@book) %> |
+  <%= link_to "Delete this book", "/books/#{@book.id}/delete" %> |
+  <%= link_to "Back to books", books_path %>
+</div>
