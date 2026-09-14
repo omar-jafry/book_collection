@@ -2,9 +2,11 @@ Rails.application.routes.draw do
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  root "books#index"
+  root "user_books#index"
 
   resources :books
+  resources :users
+  resources :user_books
 
   get "books/:id/delete", to: "books#delete"
 
