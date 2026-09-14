@@ -18,6 +18,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path, notice: "Book was successfully added."
     else
+      flash.now[:notice] = "Book could not be added."
       render :new, status: :unprocessable_content
     end
   end
@@ -47,6 +48,6 @@ class BooksController < ApplicationController
     end
     
     def book_params
-      params.expect(book: [:title])
+      params.expect(book: [:title, :author, :price, :published_date])
     end
 end
